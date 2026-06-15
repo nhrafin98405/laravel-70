@@ -1,16 +1,16 @@
 @extends('backend.master')
 
 
-@section('styles')
+@push('styles')
 
   <link rel="stylesheet" href="{{asset('')}}assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="{{asset('')}}assets/vendors/bootstrap-icons/bootstrap-icons.css">
   <link rel="stylesheet" href="{{asset('')}}assets/css/style.css">
     
-@endsection
+@endpush
 
-
-@section('content')
+    
+@push('content')
 
 
 <main class="dashboard-content">
@@ -96,11 +96,11 @@
 </main>
 
 
-@endsection
+@endpush
 
-@section('scripts')
+@push('scripts')
 
   <script src="{{asset('')}}assets/js/bootstrap.bundle.min.js"></script>
   <script src="{{asset('')}}assets/js/main.js"></script>
     
-@endsection
+@endpush

@@ -50,4 +50,18 @@ DB_PASSWORD=)
 
 12.make:controller =(php artisan make:controller FrontendController)
 
-13.extantions = Laravel Snippets,Laravel Blade Snippets,Laravel Extra Intellisense
+13.extantions = Laravel Snippets,Laravel Blade Snippets,Laravel Extra Intellisense,Laravel Blade formatter
+
+
+project steps
+
+
+1.template namano
+
+2.view e fontent,backend 2 ta folder banao
+
+3.backend e file khule ck koro
+
+4.blad templating == perent class ke child class e extend kora = ( @extends('backend.master') )
+
+5.stack/push ki kore
