@@ -21,7 +21,7 @@ STEPS
 3.composer create-project laravel/laravel laravel12_project1
 
 
-4.cd laravel12_projectname
+4.cd laravel12_ (project er name)
 
 
 5.php artisan serve
