@@ -65,3 +65,58 @@ project steps
 4.blad templating == perent class ke child class e extend kora = ( @extends('backend.master') )
 
 5.stack/push ki kore
+
+6.php artisan route:list
+
+7.{{}} = echo
+
+8.path bosanor system = href="{{url('/students')}}"
+
+
+migration
+
+
+1.blade file creats
+
+2.php artisan make:migration create_students_table
+
+3.table structure nijer banate hobe  = {      
+	    		$table->id();
+            		$table->string('name' , 100);
+           		$table->enum('gender',['male','female']);
+            		$table->string('phone',20);
+            		$table->string('email',50)->unique();
+            		$table->tinyInteger('district');
+            		$table->string('subject',100);
+            		$table->timestamps(); 
+		}
+
+
+4.edit kore abar database add korte = ( php artisan migrate:refresh )
+
+4.1.(    Schema::create('students', function (Blueprint $table) {
+            $table->id();
+            $table->string('name' , 100);
+            $table->enum('gender',['male','female','others']);
+            $table->string('phone',20)->nullable();
+            $table->string('email',50)->unique();
+            $table->tinyInteger('district');
+            $table->string('subject',100)->nullable();
+            $table->timestamps();
+        });
+
+)
+
+5.php artisan make:model Student
+
+5.1.jodi table name vinno thake tyle amon hobe =[
+
+class Student extends Model
+{
+    protected $fillable =['nmae','gender','email','district'];
+    protected $table ="table name";
+}
+
+
+]
+6.controller banate hobe resource soho ( php artisan make:controller StudentController -r )
