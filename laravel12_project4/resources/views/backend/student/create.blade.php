@@ -1,33 +1,21 @@
-
-
-
 @extends('backend.master')
 
 
-@push('styles')
 
-  <link rel="stylesheet" href="{{asset('')}}assets/css/bootstrap.min.css">
-  <link rel="stylesheet" href="{{asset('')}}assets/vendors/bootstrap-icons/bootstrap-icons.css">
-  <link rel="stylesheet" href="{{asset('')}}assets/css/style.css">
-    
-@endpush
+@section('content')
 
-    
-@push('content')
-
-
-<main class="dashboard-content">
+      <main class="dashboard-content">
         <div class="container-fluid px-3 px-lg-4 py-4">
           <div class="page-heading">
             <div class="page-heading-copy">
               <span class="page-icon"><i class="bi bi-person-plus" aria-hidden="true"></i></span>
               <div>
                 <p class="eyebrow mb-1">Management</p>
-                <h1 class="h3 mb-1">Add User</h1>
+                <a href="{{url('/students/create')}}" class="btn btn-success">Add student</a>
                 <p class="text-muted mb-0">Create a new user account with role and team assignments.</p>
               </div>
             </div>
-            <div class="heading-actions"><a class="btn btn-outline-secondary btn-sm" href="{{url('/student')}}"><i class="bi bi-arrow-left" aria-hidden="true"></i> Back to Users</a></div>
+            <div class="heading-actions"><a class="btn btn-outline-secondary btn-sm" href="{{url('/students')}}"><i class="bi bi-arrow-left" aria-hidden="true"></i> Back to Users</a></div>
           </div>
 
           <section class="row g-3">
@@ -58,14 +46,6 @@
             </div>
           </section>
         </div>
-</main>
-
-
-@endpush
-
-@push('scripts')
-
-  <script src="{{asset('')}}assets/js/bootstrap.bundle.min.js"></script>
-  <script src="{{asset('')}}assets/js/main.js"></script>
+      </main>
     
-@endpush
+@endsection
