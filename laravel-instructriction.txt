@@ -120,3 +120,19 @@ class Student extends Model
 
 ]
 6.controller banate hobe resource soho ( php artisan make:controller StudentController -r )
+
+
+data pathano ( first e from thik korte hobe database er fild onujai )
+
+1.web page e { Route::get('students',[StudentController::class,'index'])->name('student.index');
+}
+
+2. left bar e emon vabe bosbe [         {{-- <a class="nav-link" href="{{url('/students')}}"> --}}
+        <a class="nav-link" href="{{route('student.index')}}"> ]
+
+3. @csrf { form er vitor use korte hobe noile submit hobe na }
+
+4. public function store(Request $request)  Request = Laravel er object
+					    $request =form er sob data dharon kortece
+
+5.dd { Laravel er testing function }

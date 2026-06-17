@@ -22,7 +22,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.students.create');
     }
 
     /**
@@ -30,7 +30,26 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request);
+
+        $request->validate([ 
+                'fullname' => 'required|min:4|max:25',
+                'gender' => 'required',
+                'email' => 'email|required|unique:students,email'
+        ]);
+
+        $student = new student;
+       $student->name = $request->fullname;
+       $student->gender = $request->gender;
+       $student->email = $request->email;
+       $student->phone = $request->phone;
+       $student->district = $request->district;
+       $student->subject =json_encode($request->subjects);
+
+       $student->save();
+
+       return redirect('/students');
+
     }
 
     /**
