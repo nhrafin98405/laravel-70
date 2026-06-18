@@ -35,7 +35,8 @@ class StudentController extends Controller
         $request->validate([ 
                 'fullname' => 'required|min:4|max:25',
                 'gender' => 'required',
-                'email' => 'email|required|unique:students,email'
+                'email' => 'email|required|unique:students,email',
+                'phone' => 'required|min:11|max:14'
         ]);
 
         $student = new student;
@@ -44,11 +45,15 @@ class StudentController extends Controller
        $student->email = $request->email;
        $student->phone = $request->phone;
        $student->district = $request->district;
-       $student->subject =json_encode($request->subjects);
+       $subjects =$request->subjects;
+       $subjects = implode(" , ",$subjects);
+       $student->subject =$subjects;
+
+    //    dd($subjects);
 
        $student->save();
 
-       return redirect('/students');
+       return redirect('/students')->with('success','Successfully Student Created');
 
     }
 
@@ -57,7 +62,8 @@ class StudentController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $student = Student::find($id);
+        return view('backend.students.show',['student'=>$student] );
     }
 
     /**
@@ -65,7 +71,8 @@ class StudentController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $student = Student::find($id);
+        return view('backend.students.edit',['student'=>$student] );
     }
 
     /**
@@ -73,7 +80,30 @@ class StudentController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+         
+
+        $request->validate([ 
+                'fullname' => 'required|min:4|max:25',
+                'gender' => 'required',
+                'email' => 'email|required',
+                'phone' => 'required|min:11|max:14'
+        ]);
+
+        $student = student::find($id);
+       $student->name = $request->fullname;
+       $student->gender = $request->gender;
+       $student->email = $request->email;
+       $student->phone = $request->phone;
+       $student->district = $request->district;
+       $subjects =$request->subjects;
+       $subjects = implode(" , ",$subjects);
+       $student->subject =$subjects;
+
+  
+       $student->update();
+
+       return redirect('/students')->with('success','Successfully Student Updated');
+
     }
 
     /**
@@ -81,6 +111,8 @@ class StudentController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $student = Student::find($id);
+        $student->delete();
+        return redirect('/students')->with('success','Deleted successfully');
     }
 }

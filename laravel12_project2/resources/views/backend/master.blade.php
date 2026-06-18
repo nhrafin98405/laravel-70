@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="{{asset('')}}assets/vendors/bootstrap-icons/bootstrap-icons.css">
   <link rel="stylesheet" href="{{asset('')}}assets/css/style.css">
 
-@stack('styles')
+
 </head>
 
 <body>
@@ -30,6 +30,6 @@
 
   <script src="{{asset('')}}assets/js/bootstrap.bundle.min.js"></script>
   <script src="{{asset('')}}assets/js/main.js"></script>
-@stack('scripts')
+
 </body>
 </html>

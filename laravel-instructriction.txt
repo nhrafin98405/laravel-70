@@ -136,3 +136,6 @@ data pathano ( first e from thik korte hobe database er fild onujai )
 					    $request =form er sob data dharon kortece
 
 5.dd { Laravel er testing function }
+
+district er crud operation ta koro
+

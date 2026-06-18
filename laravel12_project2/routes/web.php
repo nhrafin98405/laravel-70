@@ -21,6 +21,10 @@ Route::get('/', function () {
 Route::get('/students',[StudentController::class,'index'])->name('student.index');
 Route::get('/students/create',[StudentController::class,'create'])->name('student.create');
 Route::post('/students',[StudentController::class,'store'])->name('student.store');
+Route::get('/students/{id}/edit',[StudentController::class,'edit'])->name('student.edit');
+Route::post('/students/{id}/update',[StudentController::class,'update'])->name('student.update');
+Route::get('/students/{id}/show',[StudentController::class,'show'])->name('student.show');
+Route::post('/students/{id}',[StudentController::class,'destroy'])->name('student.destroy');
 
 
 Route::get('dashboard',[DashboardControler::class,'dashboard']);
