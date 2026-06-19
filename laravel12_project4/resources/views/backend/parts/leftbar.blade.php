@@ -1,4 +1,4 @@
-    <aside class="admin-sidebar" id="adminSidebar" aria-label="Main navigation">
+<aside class="admin-sidebar" id="adminSidebar" aria-label="Main navigation">
       <div class="sidebar-header">
         <a class="brand-mark" href="index.html" aria-label="adminHMD dashboard">
           <span class="brand-icon"><i class="bi bi-grid-1x2-fill" aria-hidden="true"></i></span>
@@ -10,14 +10,14 @@
       </div>
 
       <nav class="sidebar-nav">
-        <a class="nav-link active" href="{{url('dashboard')}}" aria-current="page">
+        <a class="nav-link active" href="/dashboard" aria-current="page">
           <span class="nav-icon"><i class="bi bi-speedometer2" aria-hidden="true"></i></span>
           <span class="nav-text">Dashboard</span>
         </a>
+        {{-- <a class="nav-link" href="{{url('/students')}}"> --}}
         <a class="nav-link" href="{{route('student.index')}}">
-
           <span class="nav-icon"><i class="bi bi-people" aria-hidden="true"></i></span>
-          <span class="nav-text">Users</span>
+          <span class="nav-text">Students</span>
         </a>
 
       </nav>
