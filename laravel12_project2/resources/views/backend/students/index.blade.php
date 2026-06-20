@@ -51,7 +51,7 @@
               <tr>
                 
 
-                <td><div class="table-media"><img class="product-thumb" src="../assets/images/ecommerce/product-1.jpg" alt="Wireless Headset"><span>{{$student->name}}</span></div></td>
+                <td><div class="table-media"><img class="product-thumb" src="{{$student->photo}}" alt="Wireless Headset"><span>{{$student->name}}</span></div></td>
 
                 <td class="fw-semibold">{{$student->gender}}</td>
 

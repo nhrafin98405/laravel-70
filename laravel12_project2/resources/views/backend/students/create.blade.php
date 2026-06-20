@@ -47,7 +47,7 @@
   
 @endif
 
-              <form method="POST" action="{{route('student.store')}}" class="panel needs-validation" novalidate>
+              <form method="POST" enctype="multipart/form-data" action="{{route('student.store')}}" class="panel needs-validation" novalidate>
 
                 @csrf
 
@@ -133,6 +133,11 @@
                 </div>
 
 
+                  <div class="col-md-6">
+                    <label class="form-label" for="photo" >Student Photo</label>
+                    <input class="form-control" id="photo" name="photo" type="file" value="{{old('fullname')}}" required>
+                    <div class="invalid-feedback">Photo is required.</div>
+                  </div>
 
 
 

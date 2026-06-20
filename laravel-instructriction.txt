@@ -139,3 +139,25 @@ data pathano ( first e from thik korte hobe database er fild onujai )
 
 district er crud operation ta koro
 
+
+USER AUTHOENATION
+
+1.{
+
+	For Specific project 
+ composer config policy.advisories.block false
+
+For global
+
+
+composer config --global audit.block-insecure false
+
+}
+
+2.breez install korar age command { composer require laravel/breeze --dev }
+
+3.php artisan breeze:install
+
+4.blade
+
+5. 1
